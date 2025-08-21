@@ -1,0 +1,178 @@
+*
+{
+    margin: 0;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+
+}
+body{
+    margin: 40px;
+    background: black;
+}
+
+h1, h2
+{
+    margin-left: 70px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+h2
+{
+    margin-bottom: 20px;
+}
+
+nav ul li
+{
+    display: flex;
+    text-transform: uppercase;
+    margin: 30px;
+    letter-spacing: 2px;
+    color: white;
+    transition: 0.5s ease-in-out;
+    font-size: 15px;
+
+
+}
+nav ul li:hover
+{
+    font-size: 17px;
+    color: lawngreen;
+    transition: 0.5s ease-in-out;
+}
+
+nav ul
+{
+    display: flex;
+}
+
+nav
+{
+
+}
+
+
+/*Main*/
+section.main, section.hobby
+{
+    margin-top: 40px;
+
+}
+
+/*colmns*/
+section.column0
+{
+    display: flex;
+
+
+    height: 700px;
+}
+section.column1
+{
+    width: 50%;
+
+}
+
+section.column2
+{
+    margin-top: 50px;
+    width: 50%;
+    color: white;
+    border-radius: 10px;
+   text-align: justify;
+}
+
+img
+{
+
+    width: 100%;
+    max-height: 700px;
+    max-width: 262px;
+    transition: 0.5s ease-in-out;
+}
+
+img.me:hover
+{
+    max-width: 280px !important;
+    transition: 0.5s ease-in-out;
+}
+
+#text
+{
+
+
+    letter-spacing: 4px;
+    font-size: 18px;
+    line-height: 50px;
+}
+span
+{
+    font-weight: bold;
+}
+
+/*hobbys*/
+section.hobby
+{
+    margin-top: 5%;
+}
+
+.hobby-pic
+{
+    padding-top: 5%;
+    padding-left: 10% ;
+    max-width: 600px;
+    transition: 0.5s ease-in-out;
+}
+
+.hobby-pic:hover
+{
+    max-width: 630px;
+    transition: 0.5s ease-in-out;
+}
+
+
+.text-hobby
+{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20%;
+}
+
+#text
+{
+    color: white;
+}
+
+.likes
+{
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+h3
+{
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.travis, .eminem, .yeat
+{
+    margin-top: 10%;
+    width: 35%;
+}
+
+.singers
+{
+    max-width: 500px;
+    transition: 0.5s ease-in-out;
+}
+
+.singers:hover
+{
+    max-width: 530px;
+    transition: 0.5s ease-in-out;
+}

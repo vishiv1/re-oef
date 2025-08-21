@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-family: Arial, sans-serif;
+    font-size: 1.8em;
+}
+
+h2 {
+    font-family: Arial, sans-serif;
+    font-size: 1.5em;
+}
+
+h3 {
+    font-family: Arial, sans-serif;
+    font-size: 1.4em;
+}
+
+/* Stijl voor de paragrafen */
+p {
+    font-family: "Times New Roman", serif;
+    font-size: 1.2em;
+}
+
+/* Specifieke kleuren voor de paragrafen */
+.rood {
+    color: red;
+}
+
+.groen {
+    color: green;
+}
+
+.blauw {
+    color: blue;
+}

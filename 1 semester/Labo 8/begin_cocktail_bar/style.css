@@ -1,0 +1,84 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    font-family: Verdana, Halvetica, Arial, sans-serif;
+    font-size: 1.2em;
+}
+header>p>img
+{
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500px;
+}
+
+#left
+{
+    float: left;
+    width: 70%;
+    height: 100%;
+}
+#right
+{
+    float: right;
+    width: 25%;
+    border: 0.5px solid #a7cece ;
+    text-align: center;
+    height: 100%;
+    box-sizing: border-box;
+    background: url("images/cocktail.gif")repeat-x;
+}
+#right:hover
+{
+    background-color: brown;
+}
+
+h1,h2
+{
+    color: #007e7e;
+}
+
+h1
+{
+    font-size: 150%;
+
+}
+h2
+{
+    font-size: 130%;
+    color: red;
+}
+
+p
+{
+    margin: 20px 0;
+}
+#guarantee
+{
+    margin: 30px;
+    padding: 20px;
+    color: #444444;
+    background-color: #a7cece;
+
+}
+
+
+
+span.italic
+{
+    font-style: italic;
+}
+span.bold
+{
+    font-weight: bold;
+}
+
+footer
+{
+width: 100%;
+}

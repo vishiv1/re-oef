@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <title>Oefening</title>
+    <link rel="stylesheet" type="text/css" href="styles/index.css">
+</head>
+
+<body>
+<form>
+    <label for="voornaam">Voornaam:</label>
+    <input type="text" id="voornaam" name="voornaam" placeholder="Uw voornaam">
+    <span class="errorMessage" id="errorVoornaam"></span><br>
+
+    <label for="naam">Familienaam:</label>
+    <input type="text" id="naam" name="naam" required placeholder="Uw familienaam">
+    <span class="errorMessage" id="errorNaam"></span><br>
+
+    <label for="geboortedatum">Geboortedatum: </label>
+    <input type="text" id="geboortedatum" required placeholder="Uw geboortedatum">
+    <span class="errorMessage" id="errorGeboortedatum"></span><br>
+
+    <label for="email">Email: </label>
+    <input type="text" id="email" name="email" placeholder="Uw email">
+    <span class="errorMessage" id="errorEmail"></span><br>
+
+    <label for="aantalKinderen">Aantal kinderen: </label>
+    <input type="text" id="aantalKinderen" name="aantalKinderen" placeholder="Aantal kinderen">
+    <span class="errorMessage" id="errorAantalKinderen"></span><br>
+
+    <label for="button"></label>
+    <input type="button" id="button" value="Valideer" name="button"><br>
+
+    <span id="proficiat"></span>
+</form>
+<script src="scripts/code.js"></script>
+</body>
+</html> 

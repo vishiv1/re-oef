@@ -1,0 +1,6 @@
+Controleer
+({}[]) - Correct
+{{{()]} - Niet correct
+({()}) - Correct
+(){[}] - Niet correct
+{{([])} - Niet correct

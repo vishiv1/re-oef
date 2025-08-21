@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *
+    {
+        background-color: aqua;
+    }
+    table, tr, th, td
+    {
+        background-color: white;
+        color: green;
+    }
+</style>
+<body>
+    <table border=2px>
+        <caption>Voorbeeld van tebel</caption>
+        <thead>
+        <tr>
+            <th>kolom1</th>
+            <th>kolom2</th>
+            <th>kolom3</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+            <tr>
+    <!-- table data -->
+                <td colspan="3">1</td>
+            </tr>
+
+            <tr>
+                <td rowspan="2">4</td>
+                <td>5</td>
+                <td rowspan="2">6</td>
+            </tr>
+
+            <tr>
+                <td>7</td>
+            </tr>
+        </tbody>
+
+    </table>
+</body>
+</html>

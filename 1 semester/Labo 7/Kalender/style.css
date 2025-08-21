@@ -1,0 +1,25 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th {
+    background-color: blue;
+    color: red;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+}
+
+td.prev-month {
+    color: gray;
+}
+
+td.weekend {
+    background-color: red;
+}
+
+

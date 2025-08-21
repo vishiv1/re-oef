@@ -1,0 +1,196 @@
+/** Volgende CSS gaan we ze geven **/
+.respimg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Halvetica,sans-serif;
+}
+
+
+header > img
+{
+    height: 50px;
+
+}
+
+body > header, body > nav, #recipes , #main
+{
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.streep-border
+{
+    border-bottom: 1px solid #ebe8e8;
+}
+nav
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#nav-box > span
+{
+    border-right: 1px solid #ebe8e8;
+    text-align: center;
+}
+
+#nav-box > span > a
+{
+    padding: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 13px;
+    color: #5b4746;
+}
+
+#nav-box > span > a:hover
+{
+    text-decoration:underline #fff100 2px;
+
+}
+
+
+#main-box
+{
+    background-image: url("images/headerimage.jpg") ;
+    line-height: 500px;
+    background-size: cover;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px #8D99AE;
+    font-size: 40px;
+
+}
+
+
+#nav-box
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+main
+{
+
+}
+
+.h1 > h1
+{
+    font-size: 50px;
+    text-transform: uppercase;
+    border-bottom: 1px solid black;
+}
+
+#recipes-grid-box
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.column1
+{
+    margin-right: 1.5em;
+}
+
+.column1 > p.item-small-title
+{
+    font-size: 1.2em;
+    text-transform: uppercase;
+    color: red;
+    letter-spacing: 1px;
+}
+.column1 > h2 > a
+{
+    color:black;
+    text-decoration: none;
+}
+
+.column1 > p.item-body
+{
+    color: #666;
+    line-height: 2;
+}
+
+.column1 > p.item-author
+{
+    padding-left: 10px;
+    font-style: italic;
+}
+
+.row
+{
+    display:flex;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+#footer
+{
+    border-top: 1px solid #ebe8e8;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 2em;
+
+
+}
+#left
+{
+    float: left;
+    width: 50%;
+    text-align: right;
+    padding: 20px;
+}
+
+#right
+{
+    background-color: black;
+    color: white;
+    float: right;
+    width: 50%;
+    padding: 20px;
+}
+
+@media only screen and (min-width: 1000px)
+{
+    body > header, body > nav, #recipes , #main
+    {
+        width: 980px;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+}
+
+@media only screen and (max-width: 1000px)
+{
+    body > header, body > nav, #recipes , #main
+    {
+        width: 750px;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+}
+
+@media only screen and (max-width: 770px)
+{
+    body > header, body > nav, #recipes , #main
+    {
+        width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+}
+
+

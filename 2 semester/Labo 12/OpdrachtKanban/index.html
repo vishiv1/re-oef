@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Opdracht Kanban</title>
+</head>
+<body>
+<h1>Kanban To-Do</h1>
+<div class="input-container">
+    <input type="text" id="taskTitle" placeholder="Titel van taak">
+    <input type="text" id="taskDesc" placeholder="Beschrijving van taak">
+    <button id="btnToDo">Voeg taak toe</button>
+
+    <button id="removeBtn">Verwijderd Alles</button>
+
+</div>
+<div class="board">
+    <div class="column" id="todo" data-status="todo">
+        <h3>To Do</h3>
+    </div>
+    <div class="column" id="inprogress" data-status="inprogress">
+        <h3>In Progress</h3>
+    </div>
+    <div class="column" id="done" data-status="done">
+        <h3>Done</h3>
+    </div>
+</div>
+
+<script type="text/javascript" charset="utf-8" src="scripts/code.js"></script>
+</body>
+</html>

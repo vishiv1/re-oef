@@ -1,0 +1,20 @@
+
+.checklist li
+{
+    list-style-type: none;
+    padding-left: 25px;
+    background-repeat: no-repeat;
+    line-height: 20px;
+}
+.checklist li.checked {
+
+    background-image: url("check-box.png");
+    background-size: 20px;
+
+}
+
+.checklist li:not(.checked) {
+    background-image: url("square.png");
+    background-size: 20px;
+
+}

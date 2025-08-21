@@ -1,0 +1,16 @@
+body
+{
+
+    font-family: sans-serif;
+}
+.cursus
+{
+
+    color: lime;
+
+}
+
+.cursus:hover
+{
+    background-color: black;
+}

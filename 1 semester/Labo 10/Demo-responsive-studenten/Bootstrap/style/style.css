@@ -1,0 +1,35 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    margin: 0;
+}
+header {
+
+    text-align:center;
+    background-color:lightsteelblue;
+}
+
+#left {
+    background-color:lightblue;
+    min-height: 200px;
+    float: left;
+    width: 75%;
+}
+
+#right {
+    background-color:lightcoral;
+    min-height: 200px;
+    float: right;
+    width: 25%;
+
+}
+
+footer {
+    text-align:center;
+    background-color:lightgreen;
+    clear: both;
+}
+
