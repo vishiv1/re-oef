@@ -1,0 +1,118 @@
+/* Basis */
+:root{
+  --bg:#f6f7fb;
+  --ink:#111827;
+  --panel:#ffffff;
+  --muted:#6b7280;
+  --brand:#4f46e5;
+  --ring:#e5e7eb;
+  --soft:#f1f5f9;
+  --shadow:0 6px 24px rgba(0,0,0,.08);
+  --radius:14px;
+}
+*{ box-sizing:border-box }
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+  color:var(--ink);
+  background:var(--bg);
+}
+
+/* Nav */
+.site-header{
+  position:sticky; top:0; z-index:10;
+  background:#1f2937;
+  color:#fff;
+  box-shadow: var(--shadow);
+}
+.nav{
+  max-width:1100px; margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:16px; padding:14px 16px;
+}
+.brand{ margin:0; font-size:1.25rem }
+.nav-box{ display:flex; flex-wrap:wrap; gap:10px }
+.nav-link{
+  color:#e5e7eb; text-decoration:none; padding:6px 10px; border-radius:8px;
+}
+.nav-link:hover{ background: rgba(255,255,255,.08) }
+
+/* Secties */
+.hero{
+  background: linear-gradient(180deg,#eef2ff,transparent);
+}
+.hero-inner, .panel{
+  max-width:1100px; margin:16px auto; padding:16px;
+  background:var(--panel); border-radius:var(--radius); box-shadow:var(--shadow);
+}
+.hero-inner h2{ margin-top:0 }
+.dropcap{ font-weight:800; font-size:2rem }
+
+/* Monsters grid */
+.monsters{
+  display:grid; gap:16px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+.monster{
+  background:var(--soft); border:1px solid var(--ring);
+  border-radius:12px; padding:12px; text-align:center;
+}
+.monster img{ width:96px; height:96px; display:block; margin:8px auto }
+
+/* Tabel */
+table.info{ width:100%; border-collapse: collapse; }
+table.info thead th{
+  text-align:left; border-bottom:2px solid var(--ring); padding:8px 10px;
+}
+table.info tbody td{
+  padding:8px 10px; border-bottom:1px dashed var(--ring);
+}
+p.bron{ margin:8px 0 0; color:var(--muted); font-size:.9rem; text-align:right }
+
+/* Columns */
+.columns{ display:flex; gap:16px; flex-wrap:wrap }
+.col{ flex:1 1 320px; background:var(--soft); border:1px solid var(--ring); border-radius:12px; padding:12px }
+.linklist{ list-style:none; padding:0; margin:0 }
+.linklist .titel{ font-weight:700; margin-top:10px }
+.ext{ font-size:.9em; opacity:.8; margin-right:6px }
+
+/* Chat */
+.chat-panel{ overflow:hidden }
+.chat-header{
+  display:flex; gap:12px; align-items:center; margin-bottom:12px;
+}
+select{
+  padding:8px 10px; border-radius:8px;
+  border:1px solid #cfd5f7; background:#fff;
+}
+button{
+  padding:10px 12px; border-radius:10px; border:1px solid #cdd2e7; background:#fff; cursor:pointer;
+}
+button.ghost{ background:#f8fafc }
+.messages{ display:flex; flex-direction:column; gap:10px; }
+.message{
+  position:relative; background:#f1e9ff; border-radius:10px; padding:10px 12px 12px;
+}
+.message.mine{ background:#d9f5d6 }
+.message .timestamp{ display:block; font-size:12px; opacity:.7 }
+.message .sender{ font-size:12px; font-weight:600; display:flex; align-items:center; gap:6px }
+.message .sender button{
+  width:18px; height:18px; border-radius:50%; border:1px solid #888; background:white;
+  cursor:pointer; position:absolute; left:8px; top:8px;
+}
+.composer{ display:flex; gap:8px; margin-top:10px }
+.message-input{
+  flex:1; padding:10px 12px; border-radius:10px; border:1px solid #cbd5e1;
+}
+
+/* Footer */
+.site-footer{
+  text-align:center; color:#111; background:#e5e7eb; padding:10px 0; margin-top:24px;
+}
+.site-footer span:hover{ color:#ce0000 }
+
+/* Media query */
+@media only screen and (max-width: 900px){
+  .nav{ padding:12px }
+  .hero-inner, .panel{ margin:12px auto; padding:12px }
+}
