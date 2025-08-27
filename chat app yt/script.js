@@ -1,123 +1,70 @@
-"use strict";
+const johnSelectorBTN = document.querySelector('#john-selector');
+const janeSelectorBTN = document.querySelector('#jane-selector');
+const chatHeader = document.querySelector('.chat-header')
+const chatMessages = document.querySelector('.chat-messages')
+const chatInputForm = document.querySelector('.chat-input-form')
+const chatInput = document.querySelector('.chat-input')
+const clearChatBtn = document.querySelector('.clear-chat-button') /*--1*/
 
-// Elementen
-const johnSelectorBTN  = document.querySelector("#john-selector");
-const janeSelectorBTN  = document.querySelector("#jane-selector");
-const chatHeader       = document.querySelector(".chat-header");
-const chatMessages     = document.querySelector(".chat-messages");
-const chatInputForm    = document.querySelector(".chat-input-form");
-const chatInput        = document.querySelector(".chat-input");
-const clearChatBtn     = document.querySelector(".clear-chat-button");
+const messages = JSON.parse(localStorage.getItem('messages')) || [];
 
-// Constantes
-const STORAGE_KEY = "messages";
+const createChatMessageElement = (message) => `
+    <div class="message ${message.sender === 'Jageer' ? 'blue-bg' : 'gray-bg'}">
+        <div class="message-sender">${message.sender}</div>
+        <div class="message-text">${message.text}</div>
+        <div class="message-timestamp">${message.timestamp}</div>   
+    </div>
+`                                                                      /*--2*/
 
-// Huidige zender
-let messageSender = "John";
+window.onload = () => {
+    messages.forEach((message) => {
+        chatMessages.innerHTML += createChatMessageElement(message)
+    })
+}
 
-// Helpers
-const formatTime = (date = new Date()) =>
-    new Intl.DateTimeFormat("nl-BE", {
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: false
-    }).format(date);
-
-const loadMessages = () => {
-    try {
-        const raw = localStorage.getItem(STORAGE_KEY);
-        const parsed = raw ? JSON.parse(raw) : [];
-        return Array.isArray(parsed) ? parsed : [];
-    } catch {
-        return [];
-    }
-};
-
-const saveMessages = (msgs) => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(msgs));
-};
-
-const messages = loadMessages();
-
-const createMessageElement = ({ sender, text, timestamp }) => {
-    // Gebruik textContent om HTML-injectie te voorkomen
-    const wrapper = document.createElement("div");
-    wrapper.className = `message ${sender === "John" ? "blue-bg" : "gray-bg"}`;
-
-    const senderEl = document.createElement("div");
-    senderEl.className = "message-sender";
-    senderEl.textContent = sender;
-
-    const textEl = document.createElement("div");
-    textEl.className = "message-text";
-    textEl.textContent = text;
-
-    const timeEl = document.createElement("div");
-    timeEl.className = "message-timestamp";
-    timeEl.textContent = timestamp;
-
-    wrapper.append(senderEl, textEl, timeEl);
-    return wrapper;
-};
-
-const renderAllMessages = () => {
-    chatMessages.innerHTML = "";
-    const frag = document.createDocumentFragment();
-    messages.forEach((m) => frag.appendChild(createMessageElement(m)));
-    chatMessages.appendChild(frag);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-};
-
-const setActivePersonUI = () => {
-    chatHeader.textContent = `${messageSender} chatting...`;
-    chatInput.placeholder = `Type here, ${messageSender}...`;
-
-    const isJohn = messageSender === "John";
-    johnSelectorBTN.classList.toggle("active-person", isJohn);
-    janeSelectorBTN.classList.toggle("active-person", !isJohn);
-};
+let messageSender = 'Jageer'
 
 const updateMessageSender = (name) => {
-    messageSender = name;
-    setActivePersonUI();
-    chatInput.focus();
-};
+    messageSender = name
+    chatHeader.innerText = `${messageSender} chatting...`
+    chatInput.placeholder = `Type here, ${messageSender}...`    /*--5*/
+
+    if (name ==='Jageer') {
+        johnSelectorBTN.classList.add('active-person')
+        janeSelectorBTN.classList.remove('active-person')
+    }
+    if (name ==='Jane') {
+        janeSelectorBTN.classList.add('active-person')
+        johnSelectorBTN.classList.remove('active-person')
+    }
+
+    chatInput.focus()                                             /*--7*/
+}
+
+johnSelectorBTN.onclick = () => updateMessageSender(`Jageer`)
+janeSelectorBTN.onclick = () => updateMessageSender(`Jane`)   /*--6*/
 
 const sendMessage = (e) => {
-    e.preventDefault();
+    e.preventDefault()                                                 /*--3*/
 
-    const text = chatInput.value.trim();
-    if (!text) return; // niets versturen als het leeg is
-
+    const timestamp = new Date().toLocaleString('en-US', {hour: 'numeric', minute: 'numeric', hour12: true})
     const message = {
         sender: messageSender,
-        text,
-        timestamp: formatTime()
-    };
+        text: chatInput.value,
+        timestamp,
 
-    messages.push(message);
-    saveMessages(messages);
+    }                                                     /*--4*/
+    messages.push(message)
+    localStorage.setItem('messages', JSON.stringify(message))
+    chatMessages.innerHTML += createChatMessageElement(message)
 
-    chatMessages.appendChild(createMessageElement(message));
-    chatInputForm.reset();
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-};
+    chatInputForm.reset()
+    chatMessages.scrollTop = chatMessages.scrollHeight            /*--7*/
+}
 
-// Events
-document.addEventListener("DOMContentLoaded", () => {
-    renderAllMessages();
-    setActivePersonUI();
-    chatInput.focus();
-});
+chatInputForm.addEventListener('submit', sendMessage)    /*--8*/
 
-johnSelectorBTN.addEventListener("click", () => updateMessageSender("John"));
-janeSelectorBTN.addEventListener("click", () => updateMessageSender("Jane"));
-
-chatInputForm.addEventListener("submit", sendMessage);
-
-clearChatBtn.addEventListener("click", () => {
-    localStorage.removeItem(STORAGE_KEY); // alleen onze key verwijderen
-    messages.length = 0; // array leegmaken in memory
-    chatMessages.innerHTML = "";
-    chatInput.focus();
-});
+clearChatBtn.addEventListener('click', () =>{
+    localStorage.clear()
+    chatMessages.innerHTML = ''
+})                                                            /*--9*/
