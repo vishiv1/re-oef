@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Takenlijst — examenopgave (representatief)</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site-header">
+    <nav class="nav">
+        <h1 class="brand">Takenlijst</h1>
+        <p class="subtitle">Eenvoudig taken toevoegen, filteren en bewaren</p>
+    </nav>
+</header>
+
+<main>
+    <section class="panel">
+        <h2>Nieuwe taak</h2>
+        <form id="task-form" class="task-form" autocomplete="off">
+            <input id="task-input" class="text" name="task" placeholder="Wat moet je doen?" />
+            <select id="category" name="category" aria-label="Categorie kiezen">
+                <option value="Algemeen">Algemeen</option>
+                <option value="School">School</option>
+                <option value="Werk">Werk</option>
+                <option value="Thuis">Thuis</option>
+            </select>
+            <button type="submit">Toevoegen</button>
+        </form>
+    </section>
+
+    <section class="panel">
+        <h2>Filter & zoeken</h2>
+        <div class="toolbar">
+            <div class="filters" role="group" aria-label="Status filter">
+                <button class="chip active" data-filter="all">Alles</button>
+                <button class="chip" data-filter="active">Actief</button>
+                <button class="chip" data-filter="done">Klaar</button>
+            </div>
+            <input id="search" class="search" placeholder="Zoeken..." aria-label="Taken zoeken" />
+            <div class="spacer"></div>
+            <button id="clear-done" class="ghost">Wis voltooide</button>
+            <button id="clear-all" class="ghost">Alles wissen</button>
+        </div>
+    </section>
+
+    <section class="panel">
+        <header class="list-header">
+            <h2 class="list-title">Mijn taken</h2>
+            <span id="counter" class="counter" aria-live="polite">0 taken</span>
+        </header>
+
+        <div id="task-list" class="task-list" aria-live="polite"></div>
+        <p id="empty" class="empty" hidden>Geen taken gevonden…</p>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <p>&copy; 2025 <span>bbc</span></p>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>

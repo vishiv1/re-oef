@@ -1,0 +1,89 @@
+:root{
+    --bg:#f6f7fb;
+    --ink:#111827;
+    --muted:#6b7280;
+    --panel:#ffffff;
+    --ring:#e5e7eb;
+    --brand:#2563eb;
+    --soft:#f1f5f9;
+    --radius:14px;
+    --shadow:0 6px 24px rgba(0,0,0,.08);
+}
+*{ box-sizing:border-box }
+body{
+    margin:0;
+    color:var(--ink);
+    background:var(--bg);
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+}
+
+/* Navigatie */
+.site-header{ background:#1f2937; color:#fff; box-shadow:var(--shadow) }
+.nav{
+    max-width:900px; margin:0 auto; display:flex; align-items:center; gap:12px;
+    padding:14px 16px; justify-content:space-between; flex-wrap:wrap;
+}
+.brand{ margin:0; font-size:1.4rem }
+.subtitle{ margin:0; opacity:.85 }
+
+/* Panelen */
+.panel{
+    max-width:900px; margin:16px auto; background:var(--panel); border-radius:var(--radius);
+    box-shadow:var(--shadow); padding:16px;
+}
+
+/* Formulier */
+.task-form{ display:flex; gap:10px; flex-wrap:wrap }
+.task-form .text{
+    flex:1 1 260px; padding:10px 12px; border-radius:10px; border:1px solid #cbd5e1;
+}
+.task-form select{
+    padding:10px 12px; border-radius:10px; border:1px solid #cbd5e1; background:#fff;
+}
+button{
+    padding:10px 12px; border-radius:10px; border:1px solid #cbd5e1; background:#fff; cursor:pointer;
+}
+button.ghost{ background:#f8fafc }
+
+/* Toolbar */
+.toolbar{
+    display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+}
+.filters .chip{
+    border:1px solid #cbd5e1; background:#fff; border-radius:999px; padding:8px 12px; cursor:pointer;
+}
+.filters .chip.active{ background:#e0e7ff; border-color:#a5b4fc }
+
+.search{
+    padding:10px 12px; border-radius:10px; border:1px solid #cbd5e1; min-width:180px;
+}
+.spacer{ flex:1 1 auto }
+
+/* Takenlijst */
+.list-header{ display:flex; align-items:center; justify-content:space-between }
+.counter{ color:var(--muted) }
+.task-list{ display:flex; flex-direction:column; gap:10px }
+.empty{ color:var(--muted); text-align:center; margin:12px 0 }
+
+.task{
+    display:grid; grid-template-columns: auto 1fr auto; align-items:start; gap:10px;
+    background:var(--soft); border:1px solid var(--ring); border-radius:12px; padding:10px 12px;
+}
+.task.done{ opacity:.75 }
+.task .row{ display:flex; flex-direction:column }
+.task .title{ font-weight:600 }
+.task .meta{ font-size:.85rem; color:var(--muted) }
+.badge{
+    display:inline-block; padding:2px 8px; border-radius:999px; border:1px solid #cbd5e1; background:#fff; font-size:.8rem;
+}
+.task .actions{ display:flex; gap:8px }
+
+/* Footer */
+.site-footer{ text-align:center; color:#111; background:#e5e7eb; padding:10px 0; margin-top:24px }
+.site-footer span:hover{ color:#ce0000 }
+
+/* Responsive */
+@media only screen and (max-width: 700px){
+    .task{ grid-template-columns: auto 1fr; }
+    .task .actions{ grid-column: 1 / -1 }
+}

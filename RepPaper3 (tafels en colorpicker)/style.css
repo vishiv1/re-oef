@@ -1,0 +1,64 @@
+:root{
+    --bg:#f6f7fb;
+    --ink:#111827;
+    --muted:#6b7280;
+    --panel:#ffffff;
+    --ring:#e5e7eb;
+    --shadow:0 6px 24px rgba(0,0,0,.08);
+    --radius:14px;
+}
+*{ box-sizing:border-box }
+body{
+    margin:0; color:var(--ink); background:var(--bg);
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+}
+.site-header{
+    background:#1f2937; color:#fff; padding:16px;
+    box-shadow:var(--shadow);
+}
+.site-header h1{ margin:0 }
+.site-header .sub{ margin:.25rem 0 0; opacity:.9 }
+
+main{ padding:16px }
+.panel{
+    max-width:900px; margin:16px auto; background:var(--panel);
+    border-radius:var(--radius); box-shadow:var(--shadow); padding:16px;
+}
+.form{
+    display:grid; gap:12px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.row{ display:flex; flex-direction:column; gap:6px }
+input[type="number"], input[type="color"]{
+    padding:10px 12px; border-radius:10px; border:1px solid #cbd5e1; background:#fff;
+}
+.colors{ grid-column: 1 / -1; border:1px dashed var(--ring); border-radius:12px; padding:10px }
+.colors legend{ color:var(--muted) }
+
+.actions{ grid-column: 1 / -1; display:flex; gap:10px; flex-wrap:wrap }
+button{
+    padding:10px 12px; border-radius:10px; border:1px solid #cbd5e1;
+    background:#fff; cursor:pointer;
+}
+button#build{ background:#e0e7ff; border-color:#a5b4fc }
+button#clear{ background:#fee2e2; border-color:#fecaca }
+button#demo{ background:#ecfccb; border-color:#d9f99d }
+
+.responsive{ overflow:auto }
+.table{
+    width:100%; border-collapse: collapse; min-width: 420px;
+}
+.table thead th{
+    text-align:left; padding:10px; color:#fff;
+}
+.table tbody td{
+    padding:8px 10px; border-bottom:1px dashed var(--ring);
+}
+.table tbody tr:nth-child(odd){ background:#f8fafc }
+.table tbody tr:nth-child(even){ background:#eef2ff }
+
+.hit{ background:#fde68a !important }
+
+.empty{ color:var(--muted); margin-top:10px }
+.site-footer{ text-align:center; color:#111; background:#e5e7eb; padding:10px 0; margin-top:24px }
+.site-footer span:hover{ color:#ce0000 }

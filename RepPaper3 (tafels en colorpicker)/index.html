@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tafels generator + Colorpicker</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site-header">
+    <h1>Tafels generator</h1>
+    <p class="sub">Kies een getal en stijl de tabel met kleurkiezers.</p>
+</header>
+
+<main>
+    <section class="panel">
+        <h2>Instellingen</h2>
+
+        <form id="form" class="form" autocomplete="off">
+            <div class="row">
+                <label for="base">Tafel van</label>
+                <input id="base" name="base" type="number" min="1" step="1" value="7" required />
+            </div>
+
+            <div class="row">
+                <label for="range">Aantal rijen</label>
+                <input id="range" name="range" type="number" min="1" max="25" step="1" value="10" required />
+            </div>
+
+            <div class="row">
+                <label for="highlight">Highlight veelvouden van</label>
+                <input id="highlight" name="highlight" type="number" min="2" step="1" value="5" />
+            </div>
+
+            <fieldset class="colors">
+                <legend>Kleuren</legend>
+                <div class="row">
+                    <label for="headColor">Koptekst</label>
+                    <input id="headColor" type="color" value="#4f46e5" />
+                </div>
+                <div class="row">
+                    <label for="oddColor">Oneven rijen</label>
+                    <input id="oddColor" type="color" value="#f8fafc" />
+                </div>
+                <div class="row">
+                    <label for="evenColor">Even rijen</label>
+                    <input id="evenColor" type="color" value="#eef2ff" />
+                </div>
+                <div class="row">
+                    <label for="hitColor">Veelvoud-highlight</label>
+                    <input id="hitColor" type="color" value="#fde68a" />
+                </div>
+            </fieldset>
+
+            <div class="actions">
+                <button type="submit" id="build">Genereer</button>
+                <button type="button" id="clear">Wissen</button>
+                <button type="button" id="demo">Voorbeeld</button>
+            </div>
+        </form>
+    </section>
+
+    <section class="panel">
+        <h2>Resultaat</h2>
+        <div class="responsive">
+            <table id="table" class="table" aria-live="polite">
+                <!-- JS vult dit -->
+            </table>
+        </div>
+        <p id="empty" class="empty">Nog geen tabel. Vul de instellingen in en klik op <em>Genereer</em>.</p>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <p>&copy; 2025 <span>Examenvoorbeeld</span></p>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
